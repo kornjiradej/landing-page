@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf6ee;
+  --color-cream-100: #f4ecdc;
+  --color-cream-200: #ece0c9;
+  --color-ink: #2c2620;
+  --color-ink-soft: #5d5347;
+  --color-brand: #1f6f5a;
+  --color-brand-dark: #134a3b;
+  --color-brand-light: #e8f1ec;
+  --color-gold: #c79a4b;
+  --color-gold-dark: #a87f33;
+
+  --font-display: var(--font-prompt);
+  --font-sans: var(--font-noto-thai);
+
+  --shadow-soft: 0 12px 40px -18px rgba(19, 74, 59, 0.45);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky header when jumping to a section */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility: subtle decorative top-rule used across section headings */
+.eyebrow {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: 0.18em;
+}
