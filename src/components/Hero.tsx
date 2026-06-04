@@ -90,15 +90,9 @@ export function Hero() {
             src={slide.src}
             alt={slide.alt}
             fill
-            // First slide is the LCP element: preload it and stamp the preload
-            // <link> with fetchpriority=high so it's fetched ASAP. preload also
-            // forces eager loading; the other slides stay lazy by default.
-            preload={i === 0}
-            fetchPriority={i === 0 ? "high" : undefined}
+            priority={i === 0}
             sizes="100vw"
-            // The dark gradient overlay hides compression artifacts, so a lower
-            // quality on the hero meaningfully cuts LCP bytes with no visible loss.
-            quality={55}
+            quality={70}
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-brand-dark/45 to-brand-dark/30" />
