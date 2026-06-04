@@ -1,20 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Prompt, Noto_Sans_Thai } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { SITE_URL, site } from "@/lib/site";
 
-const prompt = Prompt({
-  subsets: ["thai", "latin"],
-  weight: ["600", "700"],
-  variable: "--font-prompt",
-  display: "swap",
-  preload: false,
-  adjustFontFallback: true,
-});
-
 const notoSansThai = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["400", "600"],
+  weight: ["400", "600", "700"],
   variable: "--font-noto-thai",
   display: "swap",
   preload: true,
@@ -86,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="th"
-      className={`${prompt.variable} ${notoSansThai.variable} h-full antialiased`}
+      className={`${notoSansThai.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

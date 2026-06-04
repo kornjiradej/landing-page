@@ -27,13 +27,13 @@ export function Services() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
                       quality={65}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   ) : null}
-                  <span className="absolute left-4 top-4 inline-flex size-11 items-center justify-center rounded-2xl bg-cream/90 text-brand shadow-sm backdrop-blur">
+                  <span className="absolute left-4 top-4 inline-flex size-11 items-center justify-center rounded-2xl bg-cream/90 text-brand shadow-sm lg:backdrop-blur">
                     <Icon className="size-6" />
                   </span>
                 </div>

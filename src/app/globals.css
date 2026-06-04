@@ -12,7 +12,7 @@
   --color-gold: #c79a4b;
   --color-gold-dark: #a87f33;
 
-  --font-display: var(--font-prompt);
+  --font-display: var(--font-noto-thai);
   --font-sans: var(--font-noto-thai);
 
   --shadow-soft: 0 12px 40px -18px rgba(19, 74, 59, 0.45);
@@ -23,10 +23,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
   /* offset for the sticky header when jumping to a section */
   scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -55,4 +60,13 @@ body {
 .eyebrow {
   font-family: var(--font-display), sans-serif;
   letter-spacing: 0.18em;
+}
+
+#pricing,
+#about,
+#faq,
+#news,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }

@@ -132,7 +132,7 @@ export function HeroCarousel({ slides, lcpBackground }: HeroCarouselProps) {
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-cream/60 bg-cream/10 px-6 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-colors hover:bg-cream hover:text-brand-dark"
+              className="inline-flex items-center gap-2 rounded-full border border-cream/60 bg-cream/15 px-6 py-3.5 text-base font-semibold text-cream transition-colors hover:bg-cream hover:text-brand-dark lg:bg-cream/10 lg:backdrop-blur-sm"
             >
               จองคิว / ติดต่อเรา
             </Link>
@@ -145,7 +145,7 @@ export function HeroCarousel({ slides, lcpBackground }: HeroCarouselProps) {
           type="button"
           onClick={() => go(index - 1)}
           aria-label="ภาพก่อนหน้า"
-          className="inline-flex size-10 items-center justify-center rounded-full bg-cream/20 text-cream backdrop-blur transition-colors hover:bg-cream hover:text-brand-dark"
+          className="inline-flex size-10 items-center justify-center rounded-full bg-cream/25 text-cream transition-colors hover:bg-cream hover:text-brand-dark lg:bg-cream/20 lg:backdrop-blur"
         >
           <ChevronLeftIcon className="size-5" />
         </button>
@@ -170,7 +170,7 @@ export function HeroCarousel({ slides, lcpBackground }: HeroCarouselProps) {
           type="button"
           onClick={() => go(index + 1)}
           aria-label="ภาพถัดไป"
-          className="inline-flex size-10 items-center justify-center rounded-full bg-cream/20 text-cream backdrop-blur transition-colors hover:bg-cream hover:text-brand-dark"
+          className="inline-flex size-10 items-center justify-center rounded-full bg-cream/25 text-cream transition-colors hover:bg-cream hover:text-brand-dark lg:bg-cream/20 lg:backdrop-blur"
         >
           <ChevronRightIcon className="size-5" />
         </button>

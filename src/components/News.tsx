@@ -25,12 +25,12 @@ export function News() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 384px"
                     quality={65}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1 text-xs font-semibold text-brand-dark backdrop-blur">
+                  <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1 text-xs font-semibold text-brand-dark lg:backdrop-blur">
                     {item.category}
                   </span>
                 </div>
