@@ -1,15 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon, ArrowRightIcon } from "@/components/icons";
-import hero1 from "../../public/images/hero-1.jpg";
-import hero2 from "../../public/images/hero-2.jpg";
-import hero3 from "../../public/images/hero-3.jpg";
 
 type Slide = {
-  src: StaticImageData;
+  src: string;
   alt: string;
   title: string;
   subtitle: string;
@@ -17,19 +14,19 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: hero1,
+    src: "/images/hero-1.jpg",
     alt: "ห้องนวดแผนโบราณบรรยากาศเรือนไทยที่เงียบสงบ",
     title: "ผ่อนคลายทุกความเมื่อยล้า ด้วยศาสตร์นวดไทยแท้",
     subtitle: "นวดแผนโบราณ & คลายเส้น โดยหมอนวดผู้เชี่ยวชาญที่ได้รับการรับรอง",
   },
   {
-    src: hero2,
+    src: "/images/hero-2.jpg",
     alt: "ลูกประคบสมุนไพรไทยอุ่น ๆ พร้อมสมุนไพรสด",
     title: "ประคบสมุนไพรไทย คลายปวด ลดอักเสบ",
     subtitle: "สมุนไพรสดใหม่ทุกวัน กระตุ้นการไหลเวียนเลือดอย่างเป็นธรรมชาติ",
   },
   {
-    src: hero3,
+    src: "/images/hero-3.jpg",
     alt: "บรรยากาศสปาผ่อนคลายพร้อมเทียนหอมและดอกไม้",
     title: "คืนสมดุลกายและใจ ในบรรยากาศแสนสงบ",
     subtitle: "พื้นที่แห่งการพักผ่อนที่ออกแบบเพื่อการผ่อนคลายอย่างแท้จริง",
@@ -83,7 +80,7 @@ export function Hero() {
     >
       {slides.map((slide, i) => (
         <div
-          key={slide.alt}
+          key={slide.src}
           className={`absolute inset-0 transition-opacity duration-700 ease-out ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
@@ -93,14 +90,7 @@ export function Hero() {
             src={slide.src}
             alt={slide.alt}
             fill
-            // The first slide is the LCP element: preload it and set
-            // fetchPriority="high" so the preload <link> carries fetchpriority.
-            // preload already forces eager loading, so no `loading` prop is
-            // needed — the other slides stay lazy by default. Blur gives an
-            // instant paint.
-            preload={i === 0}
-            fetchPriority={i === 0 ? "high" : undefined}
-            placeholder="blur"
+            priority={i === 0}
             sizes="100vw"
             quality={70}
             className="object-cover"
@@ -116,7 +106,7 @@ export function Hero() {
           </p>
           {slides.map((slide, i) => (
             <div
-              key={slide.alt}
+              key={slide.src}
               className={i === index ? "block" : "hidden"}
               aria-hidden={i !== index}
             >
@@ -160,7 +150,7 @@ export function Hero() {
         <div className="flex items-center gap-2" role="tablist" aria-label="เลือกภาพ">
           {slides.map((slide, i) => (
             <button
-              key={slide.alt}
+              key={slide.src}
               type="button"
               role="tab"
               aria-selected={i === index}
