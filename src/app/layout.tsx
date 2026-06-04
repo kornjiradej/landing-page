@@ -8,7 +8,7 @@ const prompt = Prompt({
   weight: ["600", "700"],
   variable: "--font-prompt",
   display: "swap",
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
 });
 
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero-1.webp",
-        width: 1536,
-        height: 1024,
+        width: 1280,
+        height: 853,
         alt: site.fullName,
       },
     ],
