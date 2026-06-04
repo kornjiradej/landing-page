@@ -39,7 +39,7 @@ export function About() {
         <div className="relative">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-soft">
             <Image
-              src="/images/about.jpg"
+              src="/images/about.webp"
               alt="บรรยากาศภายในร้านเรือนรื่นรมย์ สไตล์เรือนไทยอบอุ่น"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

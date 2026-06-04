@@ -15,7 +15,7 @@ export const news: NewsItem[] = [
       "ฉลองเทศกาลแห่งความสุข เรือนรื่นรมย์มอบส่วนลด 20% สำหรับทุกคอร์สนวด เมื่อจองล่วงหน้าผ่าน LINE Official ตลอดทั้งเดือนนี้",
     date: "2026-05-20",
     category: "โปรโมชั่น",
-    image: "/images/hero-3.jpg",
+    image: "/images/hero-3.webp",
   },
   {
     id: "new-aroma-menu",
@@ -24,7 +24,7 @@ export const news: NewsItem[] = [
       "สัมผัสประสบการณ์ผ่อนคลายรูปแบบใหม่กับน้ำมันหอมระเหยกลิ่นมะลิไทยแท้ ช่วยให้รู้สึกสดชื่นและผ่อนคลายอย่างล้ำลึก",
     date: "2026-05-08",
     category: "บริการใหม่",
-    image: "/images/service-oil.jpg",
+    image: "/images/service-oil.webp",
   },
   {
     id: "health-tips",
@@ -33,7 +33,7 @@ export const news: NewsItem[] = [
       "รวมเคล็ดลับการยืดเหยียดกล้ามเนื้อระหว่างวันสำหรับชาวออฟฟิศ ช่วยลดอาการปวดคอ บ่า ไหล่ ทำได้ง่ายที่โต๊ะทำงาน",
     date: "2026-04-22",
     category: "สาระสุขภาพ",
-    image: "/images/hero-2.jpg",
+    image: "/images/hero-2.webp",
   },
 ];
 
