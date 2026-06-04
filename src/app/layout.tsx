@@ -5,16 +5,20 @@ import { SITE_URL, site } from "@/lib/site";
 
 const prompt = Prompt({
   subsets: ["thai", "latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   variable: "--font-prompt",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const notoSansThai = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
   variable: "--font-noto-thai",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {

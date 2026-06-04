@@ -1,7 +1,19 @@
+import dynamic from "next/dynamic";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ContactForm } from "@/components/ContactForm";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, LineIcon } from "@/components/icons";
 import { site } from "@/lib/site";
+
+const ContactForm = dynamic(
+  () => import("@/components/ContactForm").then((mod) => mod.ContactForm),
+  {
+    loading: () => (
+      <div
+        aria-hidden
+        className="min-h-[28rem] animate-pulse rounded-3xl border border-cream-200 bg-white"
+      />
+    ),
+  },
+);
 
 export function Contact() {
   const fullAddress = `${site.address.street} ${site.address.district} ${site.address.city} ${site.address.postalCode}`;
