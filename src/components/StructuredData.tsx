@@ -12,7 +12,7 @@ export function StructuredData() {
     url: SITE_URL,
     telephone: site.phoneHref,
     email: site.email,
-    image: `${SITE_URL}/images/hero-1.webp`,
+    image: `${SITE_URL}/images/og.jpg`,
     priceRange: site.priceRange,
     address: {
       "@type": "PostalAddress",

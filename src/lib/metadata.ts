@@ -20,12 +20,13 @@ export const SEO_KEYWORDS = [
   "Ruen Ruen Rom",
 ] as const;
 
+/** JPEG for broad crawler support (LINE, Facebook, etc. may not fetch WebP). */
 export const OG_IMAGE = {
-  url: "/images/hero-1.webp",
+  url: "/images/og.jpg",
   width: 1280,
   height: 853,
   alt: `${site.fullName} — บรรยากาศร้านนวดแผนโบราณ`,
-  type: "image/webp",
+  type: "image/jpeg",
 } as const;
 
 const DEFAULT_HOME_TITLE = `${site.fullName} | ผ่อนคลายด้วยศาสตร์นวดไทยแท้`;

@@ -1,5 +1,28 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ruenruenrom.example.com";
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (explicit) {
+    return explicit.startsWith("http") ? explicit : `https://${explicit}`;
+  }
+
+  const production = process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(
+    /\/$/,
+    "",
+  );
+  if (production) {
+    return production.startsWith("http")
+      ? production
+      : `https://${production}`;
+  }
+
+  const vercel = process.env.VERCEL_URL?.replace(/\/$/, "");
+  if (vercel) {
+    return `https://${vercel}`;
+  }
+
+  return "https://ruenruenrom.example.com";
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 export const site = {
   name: "เรือนรื่นรมย์",
