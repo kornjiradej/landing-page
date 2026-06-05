@@ -41,7 +41,7 @@ export function StructuredData() {
         closes: "22:00",
       },
     ],
-    sameAs: Object.values(site.socials),
+    sameAs: Object.values(site.socials).filter((url) => url.startsWith("http")),
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: service.title },
@@ -58,11 +58,27 @@ export function StructuredData() {
     })),
   };
 
+  const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: site.fullName,
+    alternateName: site.name,
+    url: SITE_URL,
+    description: site.description,
+    inLanguage: "th-TH",
+    publisher: { "@id": `${SITE_URL}/#business` },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
       />
       <script
         type="application/ld+json"

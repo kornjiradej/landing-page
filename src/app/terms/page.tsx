@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { createPageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "ข้อกำหนดการใช้บริการ & นโยบายความเป็นส่วนตัว",
   description:
     "ข้อกำหนดและเงื่อนไขการใช้บริการ รวมถึงนโยบายความเป็นส่วนตัวในการเก็บรวบรวมและใช้ข้อมูลส่วนบุคคลของเรือนรื่นรมย์",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+});
 
 const terms = [
   {

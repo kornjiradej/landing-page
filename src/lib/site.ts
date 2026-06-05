@@ -31,6 +31,7 @@ export const site = {
     facebook: "https://facebook.com/ruenruenrom",
     youtube: "https://youtube.com/@ruenruenrom",
     instagram: "https://instagram.com/ruenruenrom",
+    twitter: "@ruenruenrom",
     line: "https://line.me/R/ti/p/@ruenruenrom",
   },
 } as const;
