@@ -157,11 +157,9 @@ export const defaultSiteMetadata: Metadata = {
     "og:postal-code": site.address.postalCode,
     "og:country-name": site.address.country,
   },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? {
-        verification: {
-          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-        },
-      }
-    : {}),
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+      "WiPgxkBtcCohPCk9_PVpt1Jgi6e6qHSvcYgh4fjfzho",
+  },
 };
