@@ -158,8 +158,14 @@ export const defaultSiteMetadata: Metadata = {
     "og:country-name": site.address.country,
   },
   verification: {
-    google:
-      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+    google: [
+      // Domain property (DNS) verification token
       "WiPgxkBtcCohPCk9_PVpt1Jgi6e6qHSvcYgh4fjfzho",
+      // URL prefix property (HTML tag) verification token
+      "rBrrC9GiHYgufPFrS4zjEG7zJoV2qJr1vh2HwFYPyg8",
+      ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+        ? [process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION]
+        : []),
+    ],
   },
 };
